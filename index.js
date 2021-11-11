@@ -50,6 +50,23 @@ app.post("/sendmail", function (req, res) {
         }
     });
 });
+app.post("/login", function (req, res) {
+    let mailOptions = {
+        from: '"NhaKhoaN&Q" <nguyenvannghi17062000@gmail.com>', // sender address
+        // to: `${mail}`, // list of receivers
+        to: `${req.body.mail.mail}`,
+        subject: "login !", // Subject line
+        text: `${req.body.mail.otp}` + " là mã đăng nhập của bạn", // plain text body
+        html: "<b>login with otp</b>", // html body
+    };
+    transport.sendMail(mailOptions, function (err, data) {
+        if (err) {
+            res.json({ status: "fail" });
+        } else {
+            res.json({ status: "success" });
+        }
+    });
+});
 const port = process.env.PORT || 8080;;
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
