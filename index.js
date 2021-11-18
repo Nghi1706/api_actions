@@ -19,7 +19,7 @@ const transport = nodemailer.createTransport({ // config mail server
     auth: {
         type: 'OAuth2',
         user: "nguyenvannghi17062000@gmail.com",
-        //pass: "nguyenvannghi17062000",
+        pass: "nguyenvannghi17062000",
         clientId: CLIENT_ID,
         clientSecret: CLIENT_SECRET,
         refreshToken: REFRESH_TOKEN,
