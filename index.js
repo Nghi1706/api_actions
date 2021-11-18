@@ -37,7 +37,7 @@ app.post("/sendmail", function (req, res) {
     let mailOptions = {
         from: '"NhaKhoaN&Q" <nguyenvannghi17062000@gmail.com>', // sender address
         // to: `${mail}`, // list of receivers
-        to: "phanquan137@gmail.com",
+        to: `${req.body.mail.mail}`,
         subject: "Nha khoa N&Q thông báo !", // Subject line
         text: "Kính chào quý khách, nha khoa N&Q hẹn gặp quý khách tại phòng khám để kiểm tra sức khoẻ răng miệng như lịch hẹn của mình đặt ra nhé! Kính chúc quý khách một ngày tốt lành! Trân trọng", // plain text body
         html: "<b>Kính chào quý khách! <br>Nha khoa N&Q hẹn gặp quý khách tại phòng khám để kiểm tra sức khoẻ răng miệng như lịch hẹn của mình đăng kí nhé!<br> Kính chúc quý khách một ngày tốt lành!<br> Trân trọng</b>", // html body
