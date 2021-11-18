@@ -7,10 +7,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-var CLIENT_ID = '701944015627-ako7j3sngdie9e456ejlb6ee08bj288m.apps.googleusercontent.com';
-var CLIENT_SECRET = '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';
+var CLIENT_ID = '637751409271-laqmbs66jtl6tcnknp20j15jsikggbs8.apps.googleusercontent.com';
+var CLIENT_SECRET = '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';
 var REDIRECT_URI = 'https://developers.google.com/oauthplayground';
-var REFRESH_TOKEN = '1//04_gJiR5fX-O5CgYIARAAGAQSNwF-L9IrLgfhJvfuieOFvzKbX25JIwuPlg4oYM3Keb4JtPKJ3LqQokwvzSyCquzePkjuEMw1U1g';
+var REFRESH_TOKEN = '1//045eVheYxi1dDCgYIARAAGAQSNwF-L9Irtv4sN-ZxoNU1qoqiniqVyXukj76S_07xg8bIRu9S1N5XVgQxo562hb76gpIqxCam3gk';
 const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
 oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 const accessToken = oAuth2Client.getAccessToken();
