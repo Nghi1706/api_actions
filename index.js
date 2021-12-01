@@ -67,6 +67,23 @@ app.post("/sendmail_user", function (req, res) {
         }
     });
 });
+app.post("/otp", function (req, res) {
+    let mailOptions = {
+        from: '"NhaKhoaN&Q" <nguyenvannghi17062000@gmail.com>', // sender address
+        // to: `${mail}`, // list of receivers
+        to: `${req.body.mail.mail}`,
+        subject: "OTP login admin", // Subject line
+        text: `otp login is : ${req.body.mail.otp}`, // plain text body
+        html: `otp login is : ${req.body.mail.otp}`, // html body
+    };
+    transport.sendMail(mailOptions, function (err, data) {
+        if (err) {
+            res.json({ status: "fail" });
+        } else {
+            res.json({ status: "success" });
+        }
+    });
+});
 const port = process.env.PORT || 8080;;
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
